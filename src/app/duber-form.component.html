@@ -1,0 +1,37 @@
+<div class="container">
+  <form class="duber-form"
+  [formGroup]="duberForm"
+  (ngSubmit)="onSubmit(duberForm.value)">
+    <span class="zipcode-section">
+      <label for="zipcode">Zip Code </label>
+      <input type="text" class="input" name="zipcode" id="zipcode" formControlName="zipcode" >
+    </span>
+    <span class="zipcode-section">
+      <label for="Budget">Budget </label>
+      <input type="text" class="input" name="budget" id="budget" formControlName="budget">
+    </span>
+
+  <button class="submit-button" [disabled]="!duberForm.valid">Search</button>
+  </form>
+  <div *ngIf="duberForm.controls.zipcode.errors?.required">
+    You zip code is empty
+  </div>
+  <div *ngIf="duberForm.controls.zipcode.errors?.pattern">
+    You zip code is not valid
+  </div>
+  <div *ngIf="duberForm.controls.budget.errors?.pattern">
+    You entered the non-number in your budget
+  </div>
+  <div *ngIf="duberForm.controls.budget.errors?.required">
+    Your budget field is empty
+  </div>
+
+
+
+</div>
+<!--
+<div *ngIf="closeStoreList">
+  ddd
+<db-product-list [locationList]="closeStoreList" [budget]="50"></db-product-list>
+</div>
+-->
