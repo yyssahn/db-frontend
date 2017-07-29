@@ -37,7 +37,7 @@ export class DuberFormComponent {
       let params = new URLSearchParams();
       params.set('zipcode', value.zipcode);
       params.set('budget', value.budget);
-      this.http.get('http://127.0.0.1:3000/search/json',{search:params}).toPromise().then(result=>console.log(result));
+      this.http.get('http://127.0.0.1:3000/search/json',{search:params}).toPromise().then(result=>console.log(result.json()));
   }
 
 }
