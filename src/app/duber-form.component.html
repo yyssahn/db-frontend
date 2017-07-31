@@ -25,10 +25,20 @@
   <div *ngIf="duberForm.controls.budget.errors?.required">
     Your budget field is empty
   </div>
-
-
-
 </div>
+
+
+<div class="container-clear">
+  <div *ngIf="productList">
+    dd
+    <div *ngFor="let product of productList">
+        <div class="row">
+        <db-product-list-item [product]="product"></db-product-list-item>
+        <div class="row">
+    </div>
+  </div>
+</div>
+
 <!--
 <div *ngIf="closeStoreList">
   ddd

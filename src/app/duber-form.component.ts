@@ -12,6 +12,7 @@ import 'rxjs/add/operator/toPromise';
 
 export class DuberFormComponent {
   duberForm;
+  productList;
   constructor(private formBuilder: FormBuilder, private http: Http){
   }
 
@@ -37,7 +38,10 @@ export class DuberFormComponent {
       let params = new URLSearchParams();
       params.set('zipcode', value.zipcode);
       params.set('budget', value.budget);
-      this.http.get('http://127.0.0.1:3000/search/json',{search:params}).toPromise().then(result=>console.log(result.json()));
+      this.http.get('http://127.0.0.1:3000/search/json',{search:params}).toPromise().then(result=>{
+        console.log(result.json())
+        this.productList = result.json();
+      });
   }
 
 }

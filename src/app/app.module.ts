@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { DuberFormComponent } from './duber-form.component';
+import { DuberProductListItem } from './duber-product-list-item.component';
+
 
 @NgModule({
   imports:      [
@@ -15,7 +17,8 @@ import { DuberFormComponent } from './duber-form.component';
   ],
   declarations: [
   AppComponent,
-  DuberFormComponent
+  DuberFormComponent,
+  DuberProductListItem
   ],
   bootstrap:    [ AppComponent ]
 })
